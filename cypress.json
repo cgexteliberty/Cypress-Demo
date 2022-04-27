@@ -1,0 +1,8 @@
+{
+    "testFiles": "**/*.feature",
+    "video": false,
+    "env": {
+        "urlB2b": "https://252.preprod.rpstage.com/fr/console",
+        "urlB2c": "https://241.preprod.rpstage.com/fr/console"
+      }
+}

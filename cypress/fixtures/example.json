@@ -1,0 +1,80 @@
+{
+  "title": "B2B",
+  "scenarios": [
+    {
+      "title": "stvib2b Connexion à un utilisateur partenaire depuis le BackOffice",
+      "steps": [
+        {
+          "goto": "https://252.preprod.rpstage.com/fr/console"
+        },
+        {
+          "test": {
+            "type": "expected",
+            "name": "login_console_stvib2b",
+            "selectorExpression": ".login .login-title",
+            "expectedValue": "Vous avez déjà un compte"
+          }
+        },
+        {
+          "login": {
+            "username": "puppeteer@elibadmin",
+            "password": "Gp!qo-8glq#"
+          }
+        },
+        {
+          "test": {
+            "type": "expected",
+            "name": "backoffice_dashboard",
+            "selectorExpression": ".box-header .box-title h1",
+            "expectedValue": "Dashboard"
+          }
+        },
+        {
+          "goto": "https://252.preprod.rpstage.com/fr/console/admin/partners/list"
+        },
+        {
+          "click": ".table > tbody > tr:nth-child(1) > .sonata-ba-list-field > .sonata-link-identifier"
+        },
+        {
+          "click": ".navbar-collapse > .navbar-left > .nav > li:nth-child(3) > a"
+        },
+        {
+          "waitFor": 2000
+        },
+        {
+          "click": "tr:nth-child(1) > .td-nowrap > .btn-group > #connectUser > .fa"
+        },
+        {
+          "goToActiveTab": "OK"
+        },
+        {
+          "waitFor": 8000
+        },
+        {
+          "test": {
+            "type": "expected",
+            "name": "front_homepage",
+            "selectorExpression": ".contentMenuBurger h1",
+            "expectedValue": "Tableau de bord"
+          }
+        }
+      ]
+    },
+    {
+      "title": "stvib2b homepage",
+      "steps": [
+        {
+          "goto": "https://252.preprod.rpstage.com/fr"
+        },
+        {
+          "test": {
+            "type": "expected",
+            "name": "homepage_stvib2b",
+            "selectorExpression": "label#loginInput-label",
+            "expectedValue": "Identifiant"
+          }
+        }
+      ]
+    }
+  ]
+}
