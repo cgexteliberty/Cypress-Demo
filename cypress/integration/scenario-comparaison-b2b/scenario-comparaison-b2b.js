@@ -15,7 +15,7 @@ And('I am on the page who list the partners', () => {
 })
 
 When('I click on the link on the ID of the first partner of the list', () => {
-    cy.get(':nth-child(1) > .sonata-ba-list-field-integer > [data-cy="idPartners"]').click()
+    cy.get(':nth-child(1) > .sonata-ba-list-field-integer > .sonata-link-identifier').click()
 })
 
 And('I click on the link {string} in the navbar', (content) => {
